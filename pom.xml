@@ -1,8 +1,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- Group and Artifact IDs for your project -->
     <groupId>com.example</groupId>
     <artifactId>example-project</artifactId>
     <version>1.0-SNAPSHOT</version>
+    
+    <!-- Set the packaging type to WAR to generate a WAR file -->
+    <packaging>war</packaging>
+
+    <!-- Build section to specify plugins and configurations -->
+    <build>
+        <plugins>
+            <!-- Maven WAR Plugin to handle WAR packaging -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <!-- Optionally, specify the output directory -->
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
